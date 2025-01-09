@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chi and code</title>
+</head>
+
+<body style="background-color: black; color: azure;">
+    <ul class="language">
+        <li>javascript</li>
+
+    </ul>
+</body>
+<script>
+    function addlanguage(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addlanguage("python")
+    addlanguage("typescript")
+
+    //this approch is very aptimize
+    function addoptimizelaanguage(langName) {
+        const li = document.createElement('li')
+        //const addtext=document.createTextNode(langName)
+        //li.appendChild(addtext)
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addlanguage('golang')
+    //edit
+    const secondlanguage = document.querySelector("li:nth-child(2)")
+    //secondlanguage.innerHTML="mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "mojo"
+    secondlanguage.replaceWith(newli)
+
+    ////edit
+    const fristlanguage = document.querySelector("li:first-child")
+    fristlanguage.outerHTML = '<li>Typescript</li>'
+
+    //remove
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove()
+</script>
+
+</html>
