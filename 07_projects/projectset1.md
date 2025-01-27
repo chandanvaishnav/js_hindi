@@ -47,6 +47,7 @@ buttons.forEach(function (button) {
 
 ## project 2 solution
 
+
 ```javascript
 const form = document.querySelector('form');
 
@@ -75,6 +76,7 @@ form.addEventListener('submit', function (e) {
 
 ```
 ## project 3 solution code
+
 
 ```javascript
 const clock = document.getElementById('clock');
@@ -193,5 +195,76 @@ function newgame() {
     playGame = true;
   });
 }
+
+```
+
+
+#project 5 solution code
+
+
+```javascript
+
+constinsert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div class='color'>
+  <table>
+  <tr>
+    <th>key</th>
+    <th>keycode</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' ' ? 'space' : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+  
+</table>
+
+
+  </div>
+  `;
+});
+
+
+```
+#project 6 solution code
+
+```javascript
+
+
+genrate a random color
+const randomcolor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+//console.log(Math.floor(Math.random() * 16)); //16chya atch value random value print hoil
+
+let intervalId;
+
+const startchangingcolor = function () {
+  if (!intervalId) {
+    intervalId = setInterval(changingcolor, 1000);
+  }
+
+  function changingcolor() {
+    document.body.style.backgroundColor = randomcolor();
+  }
+};
+const stopchangingcolor = function () {
+  clearInterval(intervalId);
+  intervalId = null;
+};
+
+document.querySelector('#start').addEventListener('click', startchangingcolor);
+
+document.querySelector('#stop').addEventListener('click', stopchangingcolor);
+
 
 ```
